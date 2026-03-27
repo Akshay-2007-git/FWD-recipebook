@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+header {
+  background-color: #e8572a;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin-bottom: 5px;
+}
+
+.navbar {
+  margin-top: 20px;
+}
+
+.nav-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background-color: white;
+  color: #e8572a;
+}
+
+.toggle-container {
+  margin-top: 20px;
+  background-color: rgba(0,0,0,0.1);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.toggle-container input {
+  transform: scale(1.5);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+main {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.recipe-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  border: 2px solid transparent;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  border-color: #e8572a;
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+  color: #e8572a;
+  margin-bottom: 5px;
+}
+
+.category-tag {
+  display: inline-block;
+  background-color: #ddd;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.nutrition-box {
+  background-color: #e4f7ea;
+  border: 1px solid #3aac5e;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.nutrition-box p {
+  margin-bottom: 3px;
+  color: #2d8a4a;
+}
+
+.hidden {
+  display: none;
+}
+.inst-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.inst-btn:hover {
+  background-color: #e8572a;
+}
+
+.instructions-box {
+  background-color: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 10px;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.5;
+}

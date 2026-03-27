@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Recipe Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🍲 The Ultimate Recipe Book</h1>
+    <p>Discover delicious meals for every time of day</p>
+    
+    <nav class="navbar">
+   <button class="nav-btn" onclick="showAll()">All Recipes</button>
+      <button class="nav-btn" onclick="showStarters()">Starters</button>
+      <button class="nav-btn" onclick="showMain()">Main Course</button>
+      <button class="nav-btn" onclick="showSnacks()">Snacks</button>
+      <button class="nav-btn" onclick="showDinner()">Dinner</button>
+      <button class="nav-btn" onclick="showDesserts()">Desserts</button>
+    </nav>
+
+    <div class="toggle-container">
+      <input type="checkbox" id="healthyToggle">
+      <label for="healthyToggle"><b>Enable Healthy Mode</b> (Show Nutrition Info)</label>
+    </div>
+  </header>
+
+  <main>
+    <div id="recipeGrid" class="grid-container">
+      
+      <div class="recipe-card starters">
+        <img src="https://svetb.com/wp-content/uploads/2024/12/Image_4-147.png" alt="Tomato Soup">
+        <h3>Tomato Basil Soup</h3>
+        <span class="category-tag">STARTERS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 150 kcal</p>
+          <p><b>Protein:</b> 3 g</p>
+          <p><b>Fat:</b> 5 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-1')">Cook This</button>
+        <div id="inst-1" class="instructions-box hidden">
+          <p>1. Sauté onions and garlic.<br>2. Add chopped tomatoes and broth.<br>3. Simmer for 20 mins.<br>4. Blend until smooth and stir in fresh basil.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card starters">
+        <img src="https://www.ambitiouskitchen.com/wp-content/uploads/2023/02/Garlic-Bread-4.jpg" alt="Garlic Bread">
+        <h3>Garlic Bread</h3>
+        <span class="category-tag">STARTERS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 200 kcal</p>
+          <p><b>Protein:</b> 5 g</p>
+          <p><b>Fat:</b> 9 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-2')">Cook This</button>
+        <div id="inst-2" class="instructions-box hidden">
+          <p>1. Slice baguette.<br>2. Mix butter, minced garlic, and parsley.<br>3. Spread on bread.<br>4. Bake at 200°C for 10 minutes until golden.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card starters">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.Wb8LP6jAR9n5b8F95le64wHaHa?pid=Api&P=0&h=180" alt="Stuffed Mushrooms">
+        <h3>Stuffed Mushrooms</h3>
+        <span class="category-tag">STARTERS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 120 kcal</p>
+          <p><b>Protein:</b> 4 g</p>
+          <p><b>Fat:</b> 7 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-3')">Cook This</button>
+        <div id="inst-3" class="instructions-box hidden">
+          <p>1. Remove mushroom stems.<br>2. Fill caps with cream cheese, garlic, and breadcrumbs.<br>3. Bake at 180°C for 15 minutes.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card starters">
+        <img src="https://www.cookingclassy.com/wp-content/uploads/2019/07/bruschetta-2.jpg" alt="Bruschetta">
+        <h3>Bruschetta</h3>
+        <span class="category-tag">STARTERS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 180 kcal</p>
+          <p><b>Protein:</b> 4 g</p>
+          <p><b>Fat:</b> 6 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-4')">Cook This</button>
+        <div id="inst-4" class="instructions-box hidden">
+          <p>1. Dice tomatoes and mix with basil, olive oil, and salt.<br>2. Toast bread slices.<br>3. Rub toast with raw garlic and top with tomato mixture.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card starters">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.lpxQIvkRQVU0axaKPLfXbAHaHa?pid=Api&P=0&h=180" alt="Spring Rolls">
+        <h3>Spring Rolls</h3>
+        <span class="category-tag">STARTERS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 220 kcal</p>
+          <p><b>Protein:</b> 6 g</p>
+          <p><b>Fat:</b> 10 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-5')">Cook This</button>
+        <div id="inst-5" class="instructions-box hidden">
+          <p>1. Shred cabbage, carrots, and chicken.<br>2. Wrap filling tightly in spring roll wrappers.<br>3. Fry in hot oil until crispy and golden.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card main">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.Z1NjfqTGUnTCce429D0eFAHaJ4?pid=Api&P=0&h=180" alt="Grilled Chicken Salad">
+        <h3>Grilled Chicken Salad</h3>
+        <span class="category-tag">MAIN COURSE</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 350 kcal</p>
+          <p><b>Protein:</b> 35 g</p>
+          <p><b>Fat:</b> 15 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-6')">Cook This</button>
+        <div id="inst-6" class="instructions-box hidden">
+          <p>1. Season and grill chicken breast until cooked through.<br>2. Chop lettuce, tomatoes, and cucumbers.<br>3. Slice chicken, place on greens, and add dressing.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card main">
+        <img src="https://omnivorescookbook.com/wp-content/uploads/2023/10/230724_Shredded-Potato-Stir-Fry_1.jpg" alt="Potato Stir Fry">
+        <h3>Potato Stir Fry</h3>
+        <span class="category-tag">MAIN COURSE</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 450 kcal</p>
+          <p><b>Protein:</b> 30 g</p>
+          <p><b>Fat:</b> 18 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-7')">Cook This</button>
+        <div id="inst-7" class="instructions-box hidden">
+          <p>1. Slice Potato thinly and cook in a hot wok.<br>2. Add broccoli, bell peppers, and snap peas.<br>3. Toss with soy sauce and ginger. Serve with rice.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card main">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.1Jf3tCUSdTvAGmCBqS3jkQHaJQ?pid=Api&P=0&h=180" alt="Pasta Primavera">
+        <h3>Pasta Primavera</h3>
+        <span class="category-tag">MAIN COURSE</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 400 kcal</p>
+          <p><b>Protein:</b> 12 g</p>
+          <p><b>Fat:</b> 10 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-8')">Cook This</button>
+        <div id="inst-8" class="instructions-box hidden">
+          <p>1. Boil pasta until al dente.<br>2. Sauté zucchini, cherry tomatoes, and peas in olive oil.<br>3. Toss veggies with pasta and top with parmesan.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card main">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.bAsw8y7uMDee81CIGyWtwAHaLG?pid=Api&P=0&h=180" alt="Lemon Butter Salmon">
+        <h3>Lemon Butter Salmon</h3>
+        <span class="category-tag">MAIN COURSE</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 380 kcal</p>
+          <p><b>Protein:</b> 34 g</p>
+          <p><b>Fat:</b> 22 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-9')">Cook This</button>
+        <div id="inst-9" class="instructions-box hidden">
+          <p>1. Season salmon fillets with salt and pepper.<br>2. Pan-sear skin-side down for 4 mins, then flip.<br>3. Baste with melted butter, garlic, and lemon juice.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card main">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.wFZrjOJqhRGcuduv9yIb1AHaHa?pid=Api&P=0&h=180" alt="Vegetable Curry">
+        <h3>Vegetable Curry</h3>
+        <span class="category-tag">MAIN COURSE</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 320 kcal</p>
+          <p><b>Protein:</b> 8 g</p>
+          <p><b>Fat:</b> 14 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-10')">Cook This</button>
+        <div id="inst-10" class="instructions-box hidden">
+          <p>1. Sauté onions, garlic, and curry powder.<br>2. Add coconut milk, diced potatoes, and carrots.<br>3. Simmer until veggies are soft. Serve with naan.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card snacks">
+        <img src="https://heatherchristo.com/wp-content/uploads/2016/03/Roasted-Carrot-Hummus-from-HeatherChristo.com_.jpg" alt="Hummus">
+        <h3>Hummus & Carrots</h3>
+        <span class="category-tag">SNACKS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 180 kcal</p>
+          <p><b>Protein:</b> 5 g</p>
+          <p><b>Fat:</b> 12 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-11')">Cook This</button>
+        <div id="inst-11" class="instructions-box hidden">
+          <p>1. Blend chickpeas, tahini, lemon juice, and garlic until smooth.<br>2. Drizzle with olive oil.<br>3. Serve with fresh carrot sticks.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card snacks">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.HbINtCquUgUFDhEl-iMZuQHaGj?pid=Api&P=0&h=180" alt="Crunchy Chickpeas">
+        <h3>Crunchy Chickpeas</h3>
+        <span class="category-tag">SNACKS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 250 kcal</p>
+          <p><b>Protein:</b> 6 g</p>
+          <p><b>Fat:</b> 16 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-12')">Cook This</button>
+        <div id="inst-12" class="instructions-box hidden">
+          <p>1. Gather almonds, walnuts, raisins, and dark chocolate chips.<br>2. Toss together in a large bowl.<br>3. Store in an airtight container.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card snacks">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.EHpRP4acHPVHX7MybDYxpQHaLH?pid=Api&P=0&h=180" alt="Apple and PB">
+        <h3>Apple & Peanut Butter</h3>
+        <span class="category-tag">SNACKS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 200 kcal</p>
+          <p><b>Protein:</b> 7 g</p>
+          <p><b>Fat:</b> 11 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-13')">Cook This</button>
+        <div id="inst-13" class="instructions-box hidden">
+          <p>1. Wash and core the apple.<br>2. Cut into thin wedges.<br>3. Serve alongside 2 tablespoons of natural peanut butter for dipping.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card snacks">
+        <img src="https://livelycuisine.com/wp-content/uploads/2025/01/Making-Air-Popped-Popcorn-at-Home-1.webp" alt="Popcorn">
+        <h3>Air-Popped Popcorn</h3>
+        <span class="category-tag">SNACKS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 90 kcal</p>
+          <p><b>Protein:</b> 3 g</p>
+          <p><b>Fat:</b> 1 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-14')">Cook This</button>
+        <div id="inst-14" class="instructions-box hidden">
+          <p>1. Place kernels in an air popper.<br>2. Pop into a large bowl.<br>3. Lightly spray with olive oil and toss with a pinch of sea salt.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card snacks">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.OHqOI8bs6Ed8ixTammLbDgHaHa?pid=Api&P=0&h=180" alt="Cheese and Crackers">
+        <h3>Cheese & Crackers</h3>
+        <span class="category-tag">SNACKS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 220 kcal</p>
+          <p><b>Protein:</b> 8 g</p>
+          <p><b>Fat:</b> 14 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-15')">Cook This</button>
+        <div id="inst-15" class="instructions-box hidden">
+          <p>1. Slice cheddar or gouda cheese into small squares.<br>2. Arrange on a plate with whole-grain crackers.<br>3. Serve immediately.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card dinner">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.6mwBro_FV1HNicfrG9eCWAHaHa?pid=Api&P=0&h=180" alt="Roast Turkey">
+        <h3>Roast Turkey</h3>
+        <span class="category-tag">DINNER</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 420 kcal</p>
+          <p><b>Protein:</b> 45 g</p>
+          <p><b>Fat:</b> 12 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-16')">Cook This</button>
+        <div id="inst-16" class="instructions-box hidden">
+          <p>1. Rub turkey breast with butter, rosemary, and thyme.<br>2. Roast at 175°C for 2 hours, basting occasionally.<br>3. Let rest before slicing.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card dinner">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.6Z_VSYhIP230uxl63_MttwHaLH?pid=Api&P=0&h=180" alt="Mushroom Risotto">
+        <h3>Mushroom Risotto</h3>
+        <span class="category-tag">DINNER</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 480 kcal</p>
+          <p><b>Protein:</b> 10 g</p>
+          <p><b>Fat:</b> 18 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-17')">Cook This</button>
+        <div id="inst-17" class="instructions-box hidden">
+          <p>1. Sauté mushrooms and set aside.<br>2. Toast arborio rice, then slowly add warm broth one ladle at a time.<br>3. Stir continuously until creamy. Mix in mushrooms.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card dinner">
+        <img src="https://fullrecipy.com/wp-content/uploads/2024/07/FB_IMG_1720366192917.jpg" alt="Steak">
+        <h3>Steak & Potatoes</h3>
+        <span class="category-tag">DINNER</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 650 kcal</p>
+          <p><b>Protein:</b> 40 g</p>
+          <p><b>Fat:</b> 30 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-18')">Cook This</button>
+        <div id="inst-18" class="instructions-box hidden">
+          <p>1. Season steak with salt and pepper. Pan-sear to desired doneness.<br>2. Dice potatoes, toss in oil, and roast at 200°C for 30 mins.<br>3. Serve together.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card dinner">
+        <img src="https://www.occasionallyeggs.com/wp-content/uploads/2017/10/thyme-lentil-potato-carrot-stew-vegan-2.jpg" alt="Lentil Stew">
+        <h3>Lentil Stew</h3>
+        <span class="category-tag">DINNER</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 300 kcal</p>
+          <p><b>Protein:</b> 18 g</p>
+          <p><b>Fat:</b> 5 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-19')">Cook This</button>
+        <div id="inst-19" class="instructions-box hidden">
+          <p>1. Sauté celery, onions, and carrots.<br>2. Add dry lentils, vegetable broth, and diced tomatoes.<br>3. Simmer for 40 minutes until lentils are tender.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card dinner">
+        <img src="https://cdn.momsdish.com/wp-content/uploads/2020/01/The-BEST-Baked-Ziti-Recipe-11-1365x2048.jpg" alt="Baked Ziti">
+        <h3>Baked Ziti</h3>
+        <span class="category-tag">DINNER</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 500 kcal</p>
+          <p><b>Protein:</b> 22 g</p>
+          <p><b>Fat:</b> 20 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-20')">Cook This</button>
+        <div id="inst-20" class="instructions-box hidden">
+          <p>1. Boil ziti pasta half-way.<br>2. Mix pasta with ricotta cheese and marinara sauce.<br>3. Top with mozzarella and bake at 190°C until bubbly.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card desserts">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.Cm82PN4PA_ivtu2HOhhC8QHaHa?pid=Api&P=0&h=180" alt="Chocolate Lava Cake">
+        <h3>Chocolate Lava Cake</h3>
+        <span class="category-tag">DESSERTS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 450 kcal</p>
+          <p><b>Protein:</b> 6 g</p>
+          <p><b>Fat:</b> 22 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-21')">Cook This</button>
+        <div id="inst-21" class="instructions-box hidden">
+          <p>1. Melt chocolate and butter.<br>2. Whisk eggs and sugar, then fold in flour.<br>3. Bake at 200°C for 12 mins.<br>4. Serve warm with ice cream.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card desserts">
+        <img src="https://img.freepik.com/premium-photo/classic-cheesecake-slice_1254967-5285.jpg?w=2000" alt="Classic Cheesecake">
+        <h3>Classic Cheesecake</h3>
+        <span class="category-tag">DESSERTS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 400 kcal</p>
+          <p><b>Protein:</b> 7 g</p>
+          <p><b>Fat:</b> 28 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-22')">Cook This</button>
+        <div id="inst-22" class="instructions-box hidden">
+          <p>1. Press graham cracker crust into pan.<br>2. Beat cream cheese, sugar, and eggs until smooth.<br>3. Bake at 160°C for 50 mins.<br>4. Chill overnight.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card desserts">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.dKHOVDujpVGNvpxXXB73CgHaHa?pid=Api&P=0&h=180" alt="Vanilla Ice Cream">
+        <h3>Vanilla Ice Cream</h3>
+        <span class="category-tag">DESSERTS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 250 kcal</p>
+          <p><b>Protein:</b> 4 g</p>
+          <p><b>Fat:</b> 14 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-23')">Cook This</button>
+        <div id="inst-23" class="instructions-box hidden">
+          <p>1. Whisk heavy cream, whole milk, sugar, and vanilla extract.<br>2. Pour into ice cream maker.<br>3. Churn for 20 mins until thick.<br>4. Freeze before serving.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card desserts">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.v71D1ROHD6ogu3u-08QV8gHaJo?pid=Api&P=0&h=180" alt="Fudge Brownies">
+        <h3>Fudge Brownies</h3>
+        <span class="category-tag">DESSERTS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 350 kcal</p>
+          <p><b>Protein:</b> 4 g</p>
+          <p><b>Fat:</b> 18 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-24')">Cook This</button>
+        <div id="inst-24" class="instructions-box hidden">
+          <p>1. Melt butter and mix with cocoa powder and sugar.<br>2. Stir in eggs and vanilla.<br>3. Gently fold in flour.<br>4. Bake at 175°C for 25 mins.</p>
+        </div>
+      </div>
+
+      <div class="recipe-card desserts">
+        <img src="https://up.yimg.com/ib/th/id/OIP.PWPHYCuUxb5HdYbCh1HaigHaFS?pid=Api&rs=1&c=1&qlt=95&w=164&h=117" alt="Fruit Tart">
+        <h3>Fresh Fruit Tart</h3>
+        <span class="category-tag">DESSERTS</span>
+        <div class="nutrition-box hidden">
+          <p><b>Calories:</b> 280 kcal</p>
+          <p><b>Protein:</b> 3 g</p>
+          <p><b>Fat:</b> 12 g</p>
+        </div>
+        <button class="inst-btn" onclick="toggleInstructions('inst-25')">Cook This</button>
+        <div id="inst-25" class="instructions-box hidden">
+          <p>1. Bake a sweet pastry shell and let cool.<br>2. Fill with vanilla custard or pastry cream.<br>3. Arrange fresh berries and kiwi on top.<br>4. Glaze with apricot jam.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
